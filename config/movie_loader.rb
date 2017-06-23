@@ -22,7 +22,10 @@ class MovieLoader
                       time: time,
                       rating: rating
                       }
+
     end
+
+
 
     # writes to file, ruby terminal app
     File.open("movie_list.json","w") do |f|

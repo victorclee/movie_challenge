@@ -18,6 +18,14 @@ class SchedulerController
     reload_input = gets.chomp
 
     if reload_input == 'yes'
+      movie = MovieLoader.new
+      file = File.read('movie_list.json')
+      movie_info = JSON.parse(file)
+      movie_info.each do |mov|
+        p mov["title"]
+        p mov["time"].split(" ").delete "min", "hr"
+        # puts mov["rating"]
+      end
       movie_loader.compile_todays_list
       load_view.finished
     end
@@ -28,10 +36,24 @@ class SchedulerController
       runner_view.ask_if_user_is_finished
       user_choice = gets.chomp
 
-      if user_choice == 'end'
+      if user_choice == 'DCI 2017 Tour Premiere'
+      
+      elsif user_choice == 'all'
+
+      elsif user_choice == 'end'
         exit_program 
+
+
+
       end
     end    
+  
+      # runner_view.input_movie_title
+      # user_pick = gets.chomp
+
+      #     p mov["time"]
+      #     p mov["rating"]
+
   end
 
   def exit_program

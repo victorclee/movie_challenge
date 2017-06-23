@@ -6,6 +6,10 @@ class RunnerView
     puts "type 'end' to exit program if you are done."
   end
 
+  def input_movie_title
+    puts "Which movie do you want to watch?"
+  end
+
   def three_d_question
     puts ""
     puts "Do you want the Standard or 3D Verison?"
